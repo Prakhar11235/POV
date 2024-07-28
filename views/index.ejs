@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POV</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+        <h1>POV</h1>
+        <form id="myForm" method="post">
+            <input id="earth" type="submit" value="ISS" formaction="/ISS">
+            <input id="mars" type="submit" value="Curosity" formaction="/curosity">
+        </form>
+    
+        <%if(locals.latitude){ %>
+            <h2>Coordinates of International Space Station are: <%= latitude %> , <%= longitude %></h2>
+            <div class="img-container"> <img src="data:image/jpeg;base64,<%= SatImg %>" alt="View of earth"></div>
+           
+        <%}%>
+
+        <%if(locals.MarsImg){ %>   
+            <h2>Image from Curosity Rover's Front Hazard Avoidance Camera</h2>
+            <div class="img-container"><img src="data:image/jpeg;base64,<%= MarsImg %>" alt="View of mars"></div>
+        <%}%>
+            
+</body>
+</html>
